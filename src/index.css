@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'PixelFont';
+    src: url('/fonts/pixel.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+/* Pixel Art Rendering */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Glowing Effect */
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #FFD700,
+                0 0 10px #FFD700,
+                0 0 15px #FFD700;
+  }
+  to {
+    box-shadow: 0 0 10px #FFD700,
+                0 0 20px #FFD700,
+                0 0 30px #FFD700;
+  }
+}
+
+/* Pixel Transition */
+.pixel-transition {
+  transition: all 0.3s steps(5, end);
+}
+
+/* Floating Animation */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Web3 Grid Background */
+.web3-bg {
+  background-image: 
+    linear-gradient(rgba(42, 58, 74, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 58, 74, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
+
+/* Hover Effect */
+.hover-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Pixel Rain Effect */
+.pixel-rain {
+  position: relative;
+  overflow: hidden;
+}
+
+.pixel-rain::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 15px,
+    rgba(255, 215, 0, 0.2) 15px,
+    rgba(255, 215, 0, 0.2) 20px
+  );
+  animation: pixelRain 0.5s linear infinite;
+}
+
+@keyframes pixelRain {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+/* Fonts */
+.font-pixel {
+  font-family: 'PixelFont', monospace;
+}
+
+/* Base Styles */
+body {
+  background-color: #0A1A2A;
+  color: #E5E7EB;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A2A3A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A3A4A;
+  border: 2px solid #1A2A3A;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3A4A5A;
+}
